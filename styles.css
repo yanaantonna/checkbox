@@ -1,0 +1,89 @@
+body {
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 30px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox + label {
+  position: relative;
+  padding: 0 0 0 40px;
+  cursor: pointer;
+}
+
+.checkbox + label::before,
+.checkbox + label::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: #e9edf5;
+  border: solid 2px #a2cdcd;
+  transition: 0.1s;
+}
+
+.checkbox + label::before {
+  z-index: 2;
+}
+
+.checkbox + label::after {
+  z-index: 3;
+}
+
+.checkbox:hover + label:before {
+  background: #fff;
+  z-index: 3;
+}
+.checkbox:hover + label:after {
+  z-index: 2;
+}
+
+.checkbox:active + label:before {
+  background: #a2cdcd;
+  z-index: 3;
+}
+.checkbox:active + label:after {
+  z-index: 2;
+}
+
+.checkbox:checked + label:before,
+.checkbox:checked + label:after,
+.checkbox:focus + label:before,
+.checkbox:focus + label:after {
+  background: #a2cdcd;
+  content: "\2713";
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
+  box-shadow: 0 2px 5px #6e8a8a;
+}
+
+.checkbox:checked + label:before {
+  z-index: 3;
+}
+.checkbox:checked + label:after {
+  z-index: 2;
+}
+
+.checkbox:disabled + label:before,
+.checkbox:disabled + label:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  background: #e9edf5;
+}
+
+.checkbox:disabled + label:before {
+  z-index: 2;
+}
+.checkbox:disabled + label:after {
+  z-index: 3;
+}
